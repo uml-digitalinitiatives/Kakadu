@@ -1,0 +1,5 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+# Routes are defined by annotating the controller methods.
