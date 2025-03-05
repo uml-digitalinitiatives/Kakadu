@@ -168,7 +168,7 @@ class ConvertController extends AbstractController
    */
     private function getTempFile(): string
     {
-        $name = tempnam($this->temp_dir, 'kakadu');
+        $name = tempnam($this->temp_dir, 'kakadu_derivative_');
         if ($name === false) {
             throw new \RuntimeException('Failed to create temporary file.');
         }

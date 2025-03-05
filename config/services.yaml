@@ -4,15 +4,15 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-    kakadu_exec: "/Users/jaredwhiklo/www/DAM2/kakadu_v8_4-01765L/bin/Mac-arm-64-gcc/kdu_compress"
-    identify_exec: /usr/local/bin/identify
-    convert_exec: /usr/local/bin/convert
+    kakadu_exec: '%env(KAKADU_COMPRESS_PATH)%'
+    identify_exec: '%env(KAKADU_IMAGEMAGICK_IDENTIFY_PATH)%'
+    convert_exec: '%env(KAKADU_IMAGEMAGICK_CONVERT_PATH)%'
     formats:
         - image/jp2
         - image/jpx
         - image/jph
-    default_format: image/jpx
-    temporary_directory: /tmp
+    default_format: '%env(KAKADU_DEFAULT_FORMAT)%'
+    temporary_directory: '%env(KAKADU_TEMP_DIR)%'
 
 services:
     # default configuration for services in *this* file
